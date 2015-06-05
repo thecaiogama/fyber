@@ -63,14 +63,14 @@
       });
 
       function getOffers(){
-        $("#contentTarget").html("Loading...");
+        $("#contentTarget").html("<img src='https://d13yacurqjgara.cloudfront.net/users/12755/screenshots/1037374/hex-loader2.gif' />");
         var url = "/offers/"+  $('#userId').val() +"/"+ $('#customParamenter').val() +"/"+ $('#pageNumber').val();
 
         $.get( url, function(data) {
           if(data.count > 0) {
             buildTable(data.count, data.offers)
           } else {
-            $("#contentTarget").html("<b>No data was found, try another seacrh :(</b>");
+            $("#contentTarget").html("<b>No data was found, try another search :(</b>");
           }
 
         });
