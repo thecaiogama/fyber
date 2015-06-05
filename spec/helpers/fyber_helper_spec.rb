@@ -9,4 +9,13 @@ describe Helpers::FyberHelper do
     it { expect(build_query("player1", "campaign2", "1")).to eq query }
   end
 
+  describe ".add_api_key" do
+    let(:query) do
+      query = build_query "player1", "campaign2", "1"
+      add_api_key(query)
+    end
+
+    it { expect(query).to include ENV['API_KEY']}
+  end
+
 end
