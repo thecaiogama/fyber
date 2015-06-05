@@ -22,10 +22,20 @@ describe Helpers::FyberHelper do
   describe ".sha1" do
     let(:query) do
       query = add_api_key main_query
-      sha1(query)
+      sha1 query
     end
 
     it { expect(query).to eq "527174bd91d296a274bda41e6a47ffe1492afde7" }
+  end
+
+  describe ".add_sha1" do
+    let(:sha1_value) do
+      query = add_api_key main_query
+      sha1 query
+    end
+
+    it { expect(add_sha1(main_query, sha1_value)).to include "527174bd91d296a274bda41e6a47ffe1492afde7" }
+    it { expect(add_sha1(main_query, sha1_value)).to_not include ENV['API_KEY'] }
 
   end
 

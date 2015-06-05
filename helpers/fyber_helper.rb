@@ -13,5 +13,9 @@ module Helpers
       Digest::SHA1.hexdigest query
     end
 
+    def add_sha1(query, sha1)
+      "#{query}&#{sha1}"
+    end
+
   end
 end
