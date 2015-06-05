@@ -5,6 +5,7 @@ require 'bundler/setup'
 require 'vcr'
 require 'webmock'
 require 'bundler/setup'
+require 'bundler/gem_helper'
 require 'simplecov'
 require 'rake'
 require File.expand_path '../../boot.rb', __FILE__

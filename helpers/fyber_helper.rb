@@ -9,5 +9,9 @@ module Helpers
       "#{query}&#{ENV['API_KEY']}"
     end
 
+    def sha1(query)
+      Digest::SHA1.hexdigest query
+    end
+
   end
 end
