@@ -77,7 +77,7 @@
       }
 
       function buildTable(count, offers){
-        var table ="<table class='table' id='offers'><thead><th colspan='5'>Total of offers found: {{amount}}</th></thead><thead><tr><th>Offer id</th><th>Title</th><th>Teaser</th><th>Payout</th><th>Thumb</th></tr></thead></table>";
+        var table ="<table class='table' id='offers'><thead><th colspan='4'>Total of offers found: {{amount}}</th><th class='nextPage'><a href='#' class='next'>next page</a></th></thead><thead><tr><th>Offer id</th><th>Title</th><th>Teaser</th><th>Payout</th><th>Thumb</th></tr></thead></table>";
 
         var offersData = {
             amount: count
@@ -94,7 +94,6 @@
         var line = "<tr><td>{{offer_id}}</td><td><a href='{{link}}'>{{title}}</a></td><td>{{teaser}}</td><td>{{payout}}</td><td><img src='{{thumb}}'/></td></tr>"
 
         $.each(offers, function(index, offer) {
-          console.log(offer);
           item = {
             offer_id: offer.offer_id,
             title: offer.title,
@@ -107,6 +106,11 @@
           var row = Mustache.render(line, item);
           $("#offers").append(row);
         });
+
+        $(".next").click(function(){
+            $("#pageNumber").val('2');
+            $("#submit").click();
+        })
       }
     </script>
 
