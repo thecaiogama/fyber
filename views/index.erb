@@ -21,11 +21,25 @@
   <body>
     <div class="container-fluid" >
 
+
       <div class="row" id="searchBar">
-        <div class="col-md-4">User ID: <input type="text" class="form-content" id="userId" placeholder="Insert User ID"></div>
-        <div class="col-md-4">Custom Parameter: <input type="text" class="form-content" id="customParamenter" placeholder="Custom Parameter"></div>
-        <div class="col-md-2">Page: <input type="text" class="form-content" id="pageNumber" size=2 value="1"></div>
-        <div class="col-md-2"><input type="button" id="submit" class="btn btn-primary" value="Search"></div>
+
+        <form class="form-inline">
+        <div class="form-group">
+          <label class="sr-only" for="userId">User Id</label>
+          <input type="text" class="form-control" id="userId" placeholder="user ID">
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="customParamenter">Custom Paramenter</label>
+          <input type="text" class="form-control" id="customParamenter" placeholder="Custom Paramenter">
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="pageNumber">Custom Paramenter</label>
+          <input type="text" class="form-control" id="pageNumber" size='2' value='1'>
+        </div>
+          <input type="button" id="submit" class="btn btn-primary" value="Search">
+        </form>
+
       </div>
 
       <div class="row" id="contentTarget">
