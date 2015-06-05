@@ -14,7 +14,7 @@ module Helpers
     end
 
     def add_sha1(query, sha1)
-      "#{query}&#{sha1}"
+      "#{query}&hashkey=#{sha1}"
     end
 
   end

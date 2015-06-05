@@ -1,6 +1,14 @@
 require 'spec_helper'
 
 describe "APP" do
+  module RSpecMixin
+    include Rack::Test::Methods
+    def app() Sinatra::Application end
+  end
+
+  include Rack::Test::Methods
+  include RSpecMixin
+
   describe "GET /" do
 
     before do
