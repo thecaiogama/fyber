@@ -15,3 +15,6 @@ Also, I integrated the project with Travis CI so I could get a better test radar
 Alongside that, I used Twitter bootstrap to work on the HTML and some javascript with jquery, to make those requests in an async way.
 
 The project was deployed to heroku, all the environment variables were properly created through the heroic dashboard, feel free to check it at: https://whispering-hollows-9955.herokuapp.com
+
+Thank You,
+Caio Gama
