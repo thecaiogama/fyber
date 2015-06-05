@@ -5,6 +5,7 @@ ruby "2.2.0"
 gem 'sinatra'
 gem 'httparty'
 gem 'require_all'
+gem 'unicorn'
 
 group :development, :test do
   gem 'rspec'

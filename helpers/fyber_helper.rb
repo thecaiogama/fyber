@@ -16,7 +16,8 @@ module Helpers
       query_with_api = add_api_key query
       sha1_value = sha1 query_with_api
 
-      query = add_sha1(query, sha1_value)
+      query = add_sha1 query, sha1_value
+
       "#{ENV['URL']}#{query}"
     end
 

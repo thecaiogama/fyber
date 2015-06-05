@@ -9,6 +9,7 @@ require 'bundler/gem_helper'
 require 'simplecov'
 require 'rake'
 require File.expand_path '../../boot.rb', __FILE__
+require File.expand_path '../../app.rb', __FILE__
 
 Bundler.require
 Bundler.setup(:default, :test)

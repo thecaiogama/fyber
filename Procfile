@@ -1,1 +1,1 @@
-web: bundle exec ruby boot.rb -p 5000
+web: bundle exec unicorn -c ./config/unicorn.rb -p 5000
