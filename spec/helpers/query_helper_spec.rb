@@ -34,7 +34,7 @@ describe Helpers::QueryHelper do
       sha1 query
     end
 
-    it { expect(add_sha1(main_query, sha1_value)).to include "527174bd91d296a274bda41e6a47ffe1492afde7" }
+    it { expect(add_sha1(main_query, sha1_value)).to include "&hashkey=527174bd91d296a274bda41e6a47ffe1492afde7" }
     it { expect(add_sha1(main_query, sha1_value)).to_not include ENV['API_KEY'] }
 
   end

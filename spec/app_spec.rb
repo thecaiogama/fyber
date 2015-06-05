@@ -17,7 +17,7 @@ describe "APP" do
 
     it { expect(last_response).to be_ok}
     it { expect(last_response.status).to eq 200 }
-    it { expect(last_response.body).to include "Hello"}
+    it { expect(last_response.body).to include "User"}
   end
 
   describe "GET /offers/player1/this-is-a-test/1" do

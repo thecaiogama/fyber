@@ -1,11 +1,63 @@
-<html>
-<head>
-  <title> Hi fyber team :) </title>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Just saying hello to the fyber team :)">
+    <meta name="author" content="Caio Gama - thecaiogama@gmail.com">
+    <link rel="icon" href="../../favicon.ico">
 
-</head>
+    <title>Hi Fyber team :)</title>
 
-<body>
-  <h1> Hello </h1>
-</body>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link href="cover.css" rel="stylesheet">
 
-</html>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="container-fluid">
+
+      <div class="row">
+        <div class="col-md-4">User ID: <input type="text" class="form-content" id="userId" placeholder="Insert User ID"></div>
+        <div class="col-md-4">Custom Parameter: <input type="text" class="form-content" id="customParamenter" placeholder="Custom Parameter"></div>
+        <div class="col-md-2">Page: <input type="text" class="form-content" id="pageNumber" size=2 value="1"></div>
+        <div class="col-md-2"><input type="button" id="submit" class="btn btn-primary" value="Search"></div>
+      </div>
+
+      <div class="row" id="contentTarget">
+
+      </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+
+      $("#submit").click(function(){
+        if ( $('#userId').val().length === 0 || $('#customParamenter').val().length === 0 || $('#pageNumber').val().length === 0) {
+          alert("Please, provide all the information required");
+        } else {
+          getOffers();
+        }
+
+
+        function getOffers(){
+          $("#contentTarget").html("Loading")
+          var url = "/offers/"+  $('#userId').val() +"/"+ $('#customParamenter').val() +"/"+ $('#pageNumber').val();
+
+          $.get( url, function( data ) {
+            console.log(data);
+            $("#contentTarget").html("OK")
+          });
+        }
+
+      });
+    </script>
+
+</body></html>
