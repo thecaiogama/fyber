@@ -42,6 +42,14 @@ function buildTable(count, offers){
   var offerHtml = Mustache.render($("#tableTpl").html(), offersData);
   $("#contentTarget").html(offerHtml);
 
+  var nav = "";
+  if($('#pageNumber').val() == 1) {
+    nav = Mustache.render($("#navNextTpl").html());
+  } else {
+    nav = Mustache.render($("#navPrevTpl").html());
+  }
+
+  $("#nav").html(nav);
   buildData(offers)
 
 }
@@ -65,6 +73,12 @@ function buildData(offers){
 
   $(".next").click(function(){
       $("#pageNumber").val('2');
+      $("#submit").click();
+
+  });
+
+  $(".prev").click(function(){
+      $("#pageNumber").val('1');
       $("#submit").click();
   })
 }

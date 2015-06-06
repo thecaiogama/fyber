@@ -51,16 +51,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.1.0/mustache.min.js"></script>
-    <script src="/js/script.js"></script>
+    <script src="/js/script.min.js"></script>
 
     <script id="tableTpl" type="text/template">
       <table class='table' id='offers'>
         <thead>
           <th colspan='4'>Total of offers found: {{amount}}</th>
-          <th class='nextPage'>
-            <a href='#' class='next'>next page</a>
-            </th>
-            </thead>
+          <th id='nav'>
+
+          </th>
+        </thead>
         <thead>
           <tr>
             <th>Offer id</th>
@@ -85,6 +85,14 @@
           <img src='{{thumb}}'/>
         </td>
       </tr>
+    </script>
+
+    <script id="navNextTpl" type="text/template">
+      <a href='#' class='next'>next page</a>
+    </script>
+
+    <script id="navPrevTpl" type="text/template">
+      <a href='#' class='prev'>previous page</a>
     </script>
 
 
