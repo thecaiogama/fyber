@@ -1,5 +1,5 @@
 $("#submit").click(function(){
-  if ( $('#userId').val().length === 0 || $('#customParamenter').val().length === 0 || $('#pageNumber').val().length === 0) {
+  if ( $('#userId').val().length === 0 || $('#pageNumber').val().length === 0) {
     alert("Please, provide all the information required");
   } else {
     getOffers();
@@ -22,13 +22,13 @@ $("#pageNumber").keydown(function (e) {
 
 function getOffers(){
   $("#contentTarget").html("<img id='loadingGif' src='https://d13yacurqjgara.cloudfront.net/users/12755/screenshots/1037374/hex-loader2.gif' />");
-  var url = "/offers/"+  $('#userId').val() +"/"+ $('#customParamenter').val() +"/"+ $('#pageNumber').val();
+  var url = "/offers/"+  $('#userId').val() +"/"+ $('#pageNumber').val() +"/"+ $('#customParamenter').val();
 
   $.get( url, function(data) {
     if(data.count > 0) {
       buildTable(data.count, data.offers)
     } else {
-      $("#contentTarget").html("<b>No data was found, try another search :(</b>");
+      $("#contentTarget").html("<b>No offers available at the moment :(</b>");
     }
 
   });

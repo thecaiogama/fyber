@@ -6,7 +6,7 @@ class FyberApp < Sinatra::Base
     erb :index
   end
 
-  get '/offers/:uid/:pub0/:page' do
+  get '/offers/:uid/:page/?:pub0?' do
     content_type :json
     content = show params['uid'], params['pub0'], params['page']
 
