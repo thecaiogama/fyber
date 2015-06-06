@@ -35,13 +35,11 @@ function getOffers(){
 }
 
 function buildTable(count, offers){
-  var table ="<table class='table' id='offers'><thead><th colspan='4'>Total of offers found: {{amount}}</th><th class='nextPage'><a href='#' class='next'>next page</a></th></thead><thead><tr><th>Offer id</th><th>Title</th><th>Teaser</th><th>Payout</th><th>Thumb</th></tr></thead></table>";
-
   var offersData = {
       amount: count
   }
 
-  var offerHtml = Mustache.render(table, offersData);
+  var offerHtml = Mustache.render($("#tableTpl").html(), offersData);
   $("#contentTarget").html(offerHtml);
 
   buildData(offers)
@@ -49,7 +47,7 @@ function buildTable(count, offers){
 }
 
 function buildData(offers){
-  var line = "<tr><td>{{offer_id}}</td><td><a href='{{link}}'>{{title}}</a></td><td>{{teaser}}</td><td>{{payout}}</td><td><img src='{{thumb}}'/></td></tr>"
+  var line = ""
 
   $.each(offers, function(index, offer) {
     item = {
@@ -61,7 +59,7 @@ function buildData(offers){
       thumb: offer.thumbnail.lowres
     }
 
-    var row = Mustache.render(line, item);
+    var row = Mustache.render($("#lineTpl").html(), item);
     $("#offers").append(row);
   });
 

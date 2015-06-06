@@ -22,6 +22,7 @@ ENV['IP'] = '109.235.143.113'
 ENV['OFFER_TYPES'] = '112'
 ENV['API_KEY'] = 'b07a12df7d52e6c118e5d47d3f9e60135b109a1f'
 ENV['URL'] = 'http://api.sponsorpay.com/feed/v1/offers.json?'
+ENV['TIMESTAMP'] = "1433461210"
 
 
 VCR.configure do |c|

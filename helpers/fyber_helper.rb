@@ -12,7 +12,8 @@ module Helpers
 
     private
     def build_url(uid, pub0, page)
-      query          = build_query uid, pub0, page
+      timestamp = ENV['TIMESTAMP'] || Time.now.to_i
+      query          = build_query uid, pub0, page, timestamp
       query_with_api = add_api_key query
       sha1_value     = sha1 query_with_api
 
