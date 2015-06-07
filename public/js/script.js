@@ -33,7 +33,7 @@ function getOffers(){
     }
 
     if(data.count > 0) {
-      buildTable(data.count, data.offers)
+      buildTable(data.count, data.offers, data.pages)
     } else {
       $("#contentTarget").html("<b>No offers available at the moment :(</b>");
     }
@@ -41,7 +41,7 @@ function getOffers(){
   });
 }
 
-function buildTable(count, offers){
+function buildTable(count, offers, pages){
   var offersData = {
       amount: count
   }
@@ -50,10 +50,12 @@ function buildTable(count, offers){
   $("#contentTarget").html(offerHtml);
 
   var nav = "";
-  if($('#pageNumber').val() == 1) {
-    nav = Mustache.render($("#navNextTpl").html());
-  } else {
-    nav = Mustache.render($("#navPrevTpl").html());
+  if(pages > 1 ){
+    if($('#pageNumber').val() == 1) {
+      nav = Mustache.render($("#navNextTpl").html());
+    } else {
+      nav = Mustache.render($("#navPrevTpl").html());
+    }
   }
 
   $("#nav").html(nav);
