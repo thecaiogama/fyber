@@ -25,7 +25,6 @@ function getOffers(){
   var url = "/offers/"+  $('#userId').val() +"/"+ $('#pageNumber').val() +"/"+ $('#customParamenter').val();
 
   $.get( url, function(data) {
-    console.log(data)
 
     if(data.code == "ERROR_INVALID_PAGE") {
       $("#contentTarget").html("<b>"+ data.message +"</b>");
